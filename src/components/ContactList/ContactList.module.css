@@ -1,0 +1,10 @@
+.contactsList {
+  margin-top: 15px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.noMatches {
+  font-style: italic;
+}

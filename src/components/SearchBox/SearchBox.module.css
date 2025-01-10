@@ -1,0 +1,20 @@
+.label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.input {
+  display: block;
+  font-size: 18px;
+  width: 320px;
+  height: 30px;
+  border: 2px solid rgb(45, 7, 23);
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  padding-left: 10px;
+}
+
+.input:hover,
+.input:focus {
+  border-color: rgb(196, 1, 82);
+}
