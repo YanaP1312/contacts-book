@@ -11,13 +11,15 @@ import {
 } from "../../redux/contacts/selectors";
 import DocumentTitle from "../../components/DocumentTitle";
 
-export default function TaskPage() {
+export default function ContactsPage() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   const items = useSelector(selectContacts);
 
-  useEffect(() => dispatch(fetchContacts()), [dispatch]);
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   return (
     <>

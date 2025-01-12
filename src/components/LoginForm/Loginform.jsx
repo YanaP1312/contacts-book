@@ -39,7 +39,7 @@ export const LoginForm = () => {
           name="email"
           id={emailFieldId}
           placeholder="Enter your email"
-          autoComplete
+          autoComplete="email"
         />
 
         <ErrorMessage className={s.error} name="email" component="span" />
@@ -51,7 +51,9 @@ export const LoginForm = () => {
           className={s.input}
           type="password"
           name="password"
+          id={passwordFieldId}
           placeholder="Enter your password"
+          autoComplete="password"
         />
         <ErrorMessage className={s.error} name="password" component="span" />
         <button className={s.btnLog} type="submit">

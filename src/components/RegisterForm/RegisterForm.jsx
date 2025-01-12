@@ -38,6 +38,7 @@ export const RegisterForm = () => {
           name="name"
           id={nameFieldId}
           placeholder="Enter your name"
+          autoComplete="name"
         />
         <ErrorMessage className={s.error} name="name" component="span" />
 
@@ -48,9 +49,9 @@ export const RegisterForm = () => {
           className={s.input}
           type="email"
           name="email"
-          id={nameFieldId}
+          id={emailFieldId}
           placeholder="Enter your email"
-          autoComplete
+          autoComplete="email"
         />
         <ErrorMessage className={s.error} name="email" component="span" />
 
@@ -62,6 +63,8 @@ export const RegisterForm = () => {
           type="password"
           name="password"
           placeholder="Enter your password"
+          id={passwordFieldId}
+          autoComplete="password"
         />
         <ErrorMessage className={s.error} name="password" component="span" />
         <button className={s.btnReg} type="submit">
