@@ -1,7 +1,6 @@
 import { useDispatch } from "react-redux";
 import { logIn } from "../../redux/auth/operations";
 import s from "./LoginForm.module.css";
-import { FeedbackSchema } from "../RegisterForm/feedBackSchema";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useId } from "react";
 
@@ -24,11 +23,7 @@ export const LoginForm = () => {
   };
 
   return (
-    <Formik
-      onSubmit={handleSubmit}
-      validationSchema={FeedbackSchema}
-      initialValues={{ email: "", password: "" }}
-    >
+    <Formik onSubmit={handleSubmit} initialValues={{ email: "", password: "" }}>
       <Form className={s.form}>
         <label htmlFor={emailFieldId} className={s.label}>
           Email
@@ -40,6 +35,7 @@ export const LoginForm = () => {
           id={emailFieldId}
           placeholder="Enter your email"
           autoComplete="email"
+          required
         />
 
         <ErrorMessage className={s.error} name="email" component="span" />
@@ -54,6 +50,7 @@ export const LoginForm = () => {
           id={passwordFieldId}
           placeholder="Enter your password"
           autoComplete="password"
+          required
         />
         <ErrorMessage className={s.error} name="password" component="span" />
         <button className={s.btnLog} type="submit">

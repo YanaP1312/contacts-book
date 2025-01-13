@@ -14,7 +14,7 @@ export default function Contact({ contact }) {
     <div className={s.listItem}>
       <div className={s.contactInfo}>
         <p className={s.contactName}>
-          <FaUserAlt size={18} style={{ marginRight: 10 }} />
+          <FaUserAlt size={15} style={{ marginRight: 10 }} />
           {contact.name}
         </p>
         <a

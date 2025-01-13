@@ -42,11 +42,13 @@
   font-family: inherit;
   margin-top: 10px;
   padding: 10px 25px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    font-weight 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btnLog:hover {
   background-color: rgb(196, 1, 82);
+  font-weight: bold;
 }
 
 .error {
