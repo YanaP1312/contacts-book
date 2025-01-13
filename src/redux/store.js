@@ -12,7 +12,39 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
+  createTransform,
 } from "redux-persist";
+
+// const authTransform = createTransform(
+//   (inboundState) => {
+//     console.log("Before saving token:", inboundState.token);
+//     if (inboundState.token) {
+//       return {
+//         ...inboundState,
+//         token: inboundState.token.replace(/^"|"$/g, ""),
+//       };
+//     }
+//     return inboundState;
+//   },
+//   (outboundState) => {
+//     console.log("After loading token:", outboundState.token);
+//     if (outboundState.token) {
+//       return {
+//         ...outboundState,
+//         token: outboundState.token.replace(/^"|"$/g, ""),
+//       };
+//     }
+//     return outboundState;
+//   },
+//   { whitelist: ["auth"] }
+// );
+
+// const authPersistConfig = {
+//   key: "auth",
+//   storage,
+//   whitelist: ["token"],
+//   transforms: [authTransform],
+// };
 
 const authPersistConfig = {
   key: "auth",

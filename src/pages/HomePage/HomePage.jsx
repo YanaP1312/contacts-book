@@ -5,10 +5,12 @@ export default function HomePage() {
     <>
       <DocumentTitle>Home</DocumentTitle>
       <div>
-        <h1>Phonebook welcome page </h1>
-        <span role="img" aria-label="Greeting icon">
-          💁‍♀️
-        </span>
+        <h1>
+          Phonebook welcome page
+          <span role="img" aria-label="Greeting icon">
+            💁‍♀️
+          </span>
+        </h1>
       </div>
     </>
   );
