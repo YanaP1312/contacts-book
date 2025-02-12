@@ -9,7 +9,7 @@ import { Provider } from "react-redux";
 import { store, persistor } from "./redux/store.js";
 import "modern-normalize";
 
-createRoot(document.getElementById("root")).render(
+createRoot(document.getElementById("root") as HTMLElement).render(
   <StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
