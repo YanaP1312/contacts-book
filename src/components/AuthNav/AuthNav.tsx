@@ -3,7 +3,7 @@ import clsx from "clsx";
 import s from "./AuthNav.module.css";
 
 export const AuthNav = () => {
-  const buildLinkClass = ({ isActive }) => {
+  const buildLinkClass = ({ isActive }: { isActive: boolean }) => {
     return clsx(s.link, isActive && s.active);
   };
 

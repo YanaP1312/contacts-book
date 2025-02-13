@@ -1,29 +1,33 @@
-import { useDispatch } from "react-redux";
 import { logIn } from "../../redux/auth/operations";
 import s from "./LoginForm.module.css";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import { useId } from "react";
+import { useAppDispatch } from "../../redux/hooks";
+import { LoginCredentials } from "../../redux/reduxTypes/interfacesAuth";
 
 export const LoginForm = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const emailFieldId = useId();
   const passwordFieldId = useId();
 
-  const handleSubmit = (values, actions) => {
-    dispatch(
-      logIn({
-        email: values.email,
-        password: values.password,
-      })
-    )
-      .unwrap()
-      .then(() => console.log("login success"))
-      .catch(() => console.log("login error"));
+  const handleSubmit = async (
+    values: LoginCredentials,
+    actions: FormikHelpers<LoginCredentials>
+  ) => {
+    try {
+      await dispatch(logIn(values)).unwrap();
+      console.log("login success");
+    } catch (error) {
+      console.log("login error");
+    }
     actions.resetForm();
   };
 
   return (
-    <Formik onSubmit={handleSubmit} initialValues={{ email: "", password: "" }}>
+    <Formik<LoginCredentials>
+      onSubmit={handleSubmit}
+      initialValues={{ email: "", password: "" }}
+    >
       <Form className={s.form}>
         <label htmlFor={emailFieldId} className={s.label}>
           Email

@@ -1,10 +1,10 @@
 import Contact from "../Contact/Contact";
 import s from "./ContactList.module.css";
-import { useSelector } from "react-redux";
 import { selectFilteredContacts } from "../../redux/filters/selectors";
+import { useAppSelector } from "../../redux/hooks";
 
 export default function ContactList() {
-  const filteredContacts = useSelector(selectFilteredContacts);
+  const filteredContacts = useAppSelector(selectFilteredContacts);
 
   return (
     <ul className={s.contactsList}>
