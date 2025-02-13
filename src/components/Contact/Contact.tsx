@@ -5,7 +5,7 @@ import { useAppDispatch } from "../../redux/hooks";
 import { MdDeleteForever } from "react-icons/md";
 import { PiPencilLineDuotone } from "react-icons/pi";
 import { TfiSave } from "react-icons/tfi";
-import { Contact } from "../../redux/reduxTypes/interfaceContact";
+import type { Contact } from "../../redux/reduxTypes/interfaceContact";
 import { useEffect, useState } from "react";
 
 interface ContactProps {
