@@ -1,8 +1,13 @@
 import { Navigate } from "react-router-dom";
-import { useSelector } from "react-redux";
 import { selectIsLoggedIn } from "../redux/auth/selectors";
+import { useAppSelector } from "../redux/hooks";
+import { UniRouteProps } from "../redux/reduxTypes/interfacesComponent";
+import { FC } from "react";
 
-export const PrivateRoute = ({ component: Component, redirectTo = "/" }) => {
-  const isLoggedIn = useSelector(selectIsLoggedIn);
-  return isLoggedIn ? Component : <Navigate to={redirectTo} />;
+export const PrivateRoute: FC<UniRouteProps> = ({
+  component,
+  redirectTo = "/",
+}) => {
+  const isLoggedIn = useAppSelector(selectIsLoggedIn);
+  return isLoggedIn ? component : <Navigate to={redirectTo} />;
 };

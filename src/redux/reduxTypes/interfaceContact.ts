@@ -5,3 +5,9 @@ export interface Contact {
 }
 
 export type AddContactRequest = Pick<Contact, "name" | "number">;
+
+export interface ContactState {
+  items: Contact[];
+  isLoading: boolean;
+  error: string | null;
+}

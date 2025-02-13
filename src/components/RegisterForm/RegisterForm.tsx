@@ -1,24 +1,22 @@
-import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/operations";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import { FeedbackSchema } from "./feedBackSchema";
 import { useId } from "react";
 import s from "./RegisterForm.module.css";
+import { useAppDispatch } from "../../redux/hooks";
+import { AuthCredentials } from "../../redux/reduxTypes/interfacesAuth";
 
 export const RegisterForm = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const nameFieldId = useId();
   const emailFieldId = useId();
   const passwordFieldId = useId();
 
-  const handleSubmit = (values, actions) => {
-    dispatch(
-      register({
-        name: values.name,
-        email: values.email,
-        password: values.password,
-      })
-    );
+  const handleSubmit = (
+    values: AuthCredentials,
+    actions: FormikHelpers<AuthCredentials>
+  ) => {
+    dispatch(register(values));
     actions.resetForm();
   };
 

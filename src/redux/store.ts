@@ -12,17 +12,24 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
+  PersistConfig,
 } from "redux-persist";
+import { AuthState } from "./reduxTypes/interfacesAuth";
 
-const authPersistConfig = {
+const authPersistConfig: PersistConfig<AuthState> = {
   key: "auth",
   storage,
   whitelist: ["token"],
 };
 
+const authPersistReducer = persistReducer<AuthState>(
+  authPersistConfig,
+  authReducer
+);
+
 export const store = configureStore({
   reducer: {
-    auth: persistReducer(authPersistConfig, authReducer),
+    auth: authPersistReducer,
     contacts: contactsReducer,
     filters: filtersReducer,
   },
@@ -32,7 +39,7 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
-  devTools: process.env.NODE_ENV === "development",
+  devTools: process.env.NODE_ENV !== "production",
 });
 
 export const persistor = persistStore(store);
