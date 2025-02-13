@@ -3,10 +3,8 @@
 }
 
 body {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #fafafa;
+  font-family: "Chakra Petch", sans-serif;
+  background-color: rgb(37, 36, 36);
   color: #212121;
   line-height: 1.5;
 }

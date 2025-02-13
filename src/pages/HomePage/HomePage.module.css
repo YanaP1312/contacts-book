@@ -1,0 +1,24 @@
+.title {
+}
+
+.wrap {
+  padding: 0 10px;
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .wrap {
+    width: 768px;
+    padding: 0 16px;
+  }
+}
+
+@media screen and (min-width: 1168px) {
+  .wrap {
+    width: 1168px;
+  }
+}

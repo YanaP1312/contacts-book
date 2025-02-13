@@ -10,6 +10,7 @@ import {
   selectContacts,
 } from "../../redux/contacts/selectors";
 import DocumentTitle from "../../components/DocumentTitle";
+import Waves from "../../blocks/Backgrounds/Waves/Waves";
 
 export default function ContactsPage() {
   const dispatch = useAppDispatch();
@@ -23,6 +24,7 @@ export default function ContactsPage() {
 
   return (
     <>
+      <Waves />
       <DocumentTitle>Your phonebook</DocumentTitle>
       <ContactForm />
       <SearchBox />
