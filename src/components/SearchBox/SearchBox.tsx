@@ -3,6 +3,7 @@ import s from "./SearchBox.module.css";
 import { changeFilter } from "../../redux/filters/slice";
 import { selectChangeFilter } from "../../redux/filters/selectors";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { IoSearchOutline } from "react-icons/io5";
 
 export default function SearchBox() {
   const searchId = useId();
@@ -18,13 +19,16 @@ export default function SearchBox() {
       <label className={s.label} htmlFor={searchId}>
         Find contacts
       </label>
-      <input
-        className={s.input}
-        type="text"
-        id={searchId}
-        value={filter}
-        onChange={handleFilterChange}
-      ></input>
+      <div className={s.wrap}>
+        <IoSearchOutline size={20} className={s.icon} />
+        <input
+          className={s.input}
+          type="text"
+          id={searchId}
+          value={filter}
+          onChange={handleFilterChange}
+        ></input>
+      </div>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { FC, ReactNode, Suspense } from "react";
-import { AppBar } from "./AppBar/AppBar";
+import { AppBar } from "../AppBar/AppBar";
+import s from "./Layout.module.css";
 
 interface LayoutProps {
   children: ReactNode;
@@ -7,7 +8,7 @@ interface LayoutProps {
 
 export const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
-    <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 16px" }}>
+    <div className={s.layoutWraper}>
       <AppBar />
       <Suspense fallback={null}>{children}</Suspense>
     </div>

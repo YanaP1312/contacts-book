@@ -8,6 +8,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
 import { store, persistor } from "./redux/store";
 import "modern-normalize";
+import { Toaster } from "react-hot-toast";
 
 createRoot(document.getElementById("root") as HTMLElement).render(
   <StrictMode>
@@ -16,6 +17,7 @@ createRoot(document.getElementById("root") as HTMLElement).render(
         <BrowserRouter>
           <HelmetProvider>
             <App />
+            <Toaster position="bottom-right" reverseOrder={false} />
           </HelmetProvider>
         </BrowserRouter>
       </PersistGate>

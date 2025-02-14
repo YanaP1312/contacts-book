@@ -81,18 +81,20 @@ export default function Contact({ contact }: ContactProps) {
           </>
         )}
       </div>
-      {editMode ? (
-        <button onClick={handleSave} className={s.btnSave}>
-          <TfiSave />
+      <div className={s.wrapBtn}>
+        {editMode ? (
+          <button onClick={handleSave} className={s.btnSave}>
+            <TfiSave size={16} />
+          </button>
+        ) : (
+          <button onClick={() => setEditMode(true)} className={s.btnUpdate}>
+            <PiPencilLineDuotone size={20} />
+          </button>
+        )}
+        <button onClick={handleDelete} className={s.btnDelete}>
+          <MdDeleteForever size={20} />
         </button>
-      ) : (
-        <button onClick={() => setEditMode(true)} className={s.btnUpdate}>
-          <PiPencilLineDuotone />
-        </button>
-      )}
-      <button onClick={handleDelete} className={s.btnDelete}>
-        <MdDeleteForever />
-      </button>
+      </div>
     </div>
   );
 }

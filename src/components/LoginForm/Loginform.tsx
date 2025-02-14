@@ -6,6 +6,8 @@ import { useAppDispatch } from "../../redux/hooks";
 import { LoginCredentials } from "../../redux/reduxTypes/interfacesAuth";
 import { FaEye } from "react-icons/fa6";
 import { FaEyeSlash } from "react-icons/fa6";
+import { LogInSchema } from "../RegisterForm/feedBackSchema";
+import toast from "react-hot-toast";
 
 export const LoginForm = () => {
   const dispatch = useAppDispatch();
@@ -19,16 +21,16 @@ export const LoginForm = () => {
   ) => {
     try {
       await dispatch(logIn(values)).unwrap();
-      console.log("login success");
+      actions.resetForm();
     } catch (error) {
-      console.log("login error");
+      toast.error("Login error. Please, check information and try again.");
     }
-    actions.resetForm();
   };
 
   return (
     <Formik<LoginCredentials>
       onSubmit={handleSubmit}
+      validationSchema={LogInSchema}
       initialValues={{ email: "", password: "" }}
     >
       <Form className={s.form}>
@@ -62,10 +64,14 @@ export const LoginForm = () => {
           />
           <button
             type="button"
-            onClick={() => setShowPassword((prev) => !prev)}
             className={s.toggleBtn}
+            onClick={() => setShowPassword((prev) => !prev)}
           >
-            {showPassword ? <FaEye /> : <FaEyeSlash />}
+            {showPassword ? (
+              <FaEye className={s.icon} />
+            ) : (
+              <FaEyeSlash className={s.icon} />
+            )}
           </button>
         </div>
         <ErrorMessage className={s.error} name="password" component="span" />

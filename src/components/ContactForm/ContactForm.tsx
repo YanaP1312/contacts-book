@@ -5,6 +5,7 @@ import s from "./ContactForm.module.css";
 import { addContact } from "../../redux/contacts/operations";
 import { useAppDispatch } from "../../redux/hooks";
 import { AddContactRequest } from "../../redux/reduxTypes/interfaceContact";
+import { ContactSchema } from "../RegisterForm/feedBackSchema";
 
 export default function ContactForm() {
   const nameFieldId = useId();
@@ -18,22 +19,11 @@ export default function ContactForm() {
     dispatch(addContact(values));
     actions.resetForm();
   };
-  const FeedbackSchema = Yup.object().shape({
-    name: Yup.string()
-      .min(3, "Too short!")
-      .max(50, "Too long!")
-      .required("Name is required"),
-    number: Yup.string()
-      .min(3, "Too short!")
-      .max(50, "Too long!")
-      .matches(/^[0-9+()-\s]*$/, "Invalid phone number format")
-      .required("Number is required"),
-  });
 
   return (
     <Formik<AddContactRequest>
       onSubmit={handleSubmit}
-      validationSchema={FeedbackSchema}
+      validationSchema={ContactSchema}
       initialValues={{ name: "", number: "" }}
     >
       <Form className={s.form}>

@@ -4,26 +4,27 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid rgb(50, 3, 73);
-  border-radius: 10px;
-  background-color: rgb(186, 185, 239);
+  border: 2px solid rgb(219, 14, 14);
+  border-radius: 5px;
+  background-color: rgb(251, 251, 252);
 }
 
 .contactInfo {
 }
 
 .contactName {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
 }
 .contactNum {
   font-style: italic;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
+  transition: color 2s cubic-bezier(0.31, 0.7, 0.83, 0.67);
 }
 
 .contactNum:hover {
-  color: rgb(196, 1, 82);
+  color: rgb(219, 14, 14);
 }
 
 .icon {
@@ -52,20 +53,40 @@
   }
 }
 
-.btnDelete {
-  width: 100px;
-  height: 40px;
-  border-radius: 15px;
-  border: 2px solid rgb(50, 3, 73);
-  font-weight: lighter;
+.input {
+  border: none;
   font-size: 18px;
-  background-color: rgb(237, 32, 117);
-  font-family: inherit;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    font-weight 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: bold;
+  font-style: italic;
 }
 
+.wrapBtn {
+  display: flex;
+  flex-direction: column;
+}
+.wrapBtn button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btnSave {
+  color: rgb(5, 5, 250);
+}
+.btnUpdate {
+  color: rgb(16, 226, 16);
+}
+.btnDelete {
+  color: red;
+}
+
+.btnSave:hover {
+  color: rgb(13, 13, 185);
+}
+.btnUpdate:hover {
+  color: green;
+}
 .btnDelete:hover {
-  background-color: rgb(196, 1, 82);
-  font-weight: bold;
+  color: rgb(180, 40, 40);
 }

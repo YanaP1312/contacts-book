@@ -7,6 +7,7 @@ import {
   User,
 } from "../reduxTypes/interfacesAuth";
 import { RootState } from "../store";
+import toast from "react-hot-toast";
 
 axios.defaults.baseURL = "https://connections-api.goit.global/";
 
@@ -26,8 +27,10 @@ export const register = createAsyncThunk<
   try {
     const res = await axios.post<AuthResponse>("/users/signup", credentials);
     setAuthHeader(res.data.token);
+    toast.success("Success! Let's try you personal phonebook.");
     return res.data;
   } catch (e: any) {
+    toast.error("Invalid credentials. Please, try again!");
     return thunkAPI.rejectWithValue(e.message);
   }
 });

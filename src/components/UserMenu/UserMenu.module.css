@@ -5,6 +5,8 @@
   gap: 12px;
   margin-bottom: 10px;
   margin-top: 10px;
+  color: white;
+  min-width: 320px;
 }
 
 .user {
@@ -14,17 +16,15 @@
 .btn {
   display: block;
   border-radius: 5px;
-  border: 2px solid rgb(50, 3, 73);
-  font-weight: lighter;
+  border: none;
+  font-weight: bold;
   font-size: 18px;
-  background-color: rgb(237, 32, 117);
+  background-color: rgb(219, 14, 14);
   font-family: inherit;
   padding: 5px 15px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    font-weight 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn:hover {
-  background-color: rgb(196, 1, 82);
-  font-weight: bold;
+  background-color: rgb(180, 40, 40);
 }

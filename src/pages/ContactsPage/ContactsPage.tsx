@@ -11,6 +11,7 @@ import {
 } from "../../redux/contacts/selectors";
 import DocumentTitle from "../../components/DocumentTitle";
 import Waves from "../../blocks/Backgrounds/Waves/Waves";
+import Loader from "../../components/Loader/Loader";
 
 export default function ContactsPage() {
   const dispatch = useAppDispatch();
@@ -28,7 +29,7 @@ export default function ContactsPage() {
       <DocumentTitle>Your phonebook</DocumentTitle>
       <ContactForm />
       <SearchBox />
-      {isLoading && <p>Loading contacts...</p>}
+      {isLoading && <Loader />}
       {error && <p>{error}</p>}
       {items.length > 0 && <ContactList />}
     </>

@@ -1,0 +1,16 @@
+.layoutWraper {
+  padding: 0 10px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .layoutWraper {
+    width: 768px;
+    padding: 0 16px;
+  }
+}
+
+@media screen and (min-width: 1168px) {
+  .layoutWraper {
+    width: 1168px;
+  }
+}

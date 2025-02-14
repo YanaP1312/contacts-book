@@ -73,7 +73,11 @@ export const RegisterForm = () => {
             className={s.toggleBtn}
             onClick={() => setShowPassword((prev) => !prev)}
           >
-            {showPassword ? <FaEye /> : <FaEyeSlash />}
+            {showPassword ? (
+              <FaEye className={s.icon} />
+            ) : (
+              <FaEyeSlash className={s.icon} />
+            )}
           </button>
         </div>
         <ErrorMessage className={s.error} name="password" component="span" />

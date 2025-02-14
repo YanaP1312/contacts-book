@@ -12,7 +12,7 @@ export const Navigation = () => {
   };
 
   return (
-    <nav>
+    <nav className={s.nav}>
       <NavLink className={buildLinkClass} to="/">
         Home
       </NavLink>
